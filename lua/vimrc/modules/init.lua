@@ -6,6 +6,9 @@
 -- Completion
 require("vimrc.modules.cmp")
 
+-- Debug Adapter Protocol
+require("vimrc.modules.dap")
+
 -- Editing
 require("vimrc.modules.edit")
 
