@@ -84,6 +84,13 @@ lazy.setup({
     },
   },
 
+  -- Debug Adapter Protocol
+  {
+    {
+      "mfussenegger/nvim-dap",
+    },
+  },
+
   -- Language Server Protocol
   {
     -- Use Neovim as a language server
