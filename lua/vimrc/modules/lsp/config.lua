@@ -113,9 +113,11 @@ do
     vimrc.map("n", "<Space>q", vim.diagnostic.setloclist,     nil, "Set diagnostics")
     vimrc.map("n", "<Space>so", function()
       telescope.lsp_document_symbols()
-    end,                                                nil, "List symbols in buffer")
+    end,                                                      nil, "List symbols in buffer")
     vimrc.map("n", "<Space>wa", vim.lsp.buf.add_workspace_folder)
-    vimrc.map("n", "<Space>wl", function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end)
+    vimrc.map("n", "<Space>wl", function()
+      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end,                                                      nil, "List workspace folders")
     vimrc.map("n", "<Space>wr", vim.lsp.buf.remove_workspace_folder)
     vimrc.map("n", "K", vim.lsp.buf.hover)
     vimrc.map("n", "]d", vim.diagnostic.goto_next,            nil, "Go to next diagnostic")
@@ -135,7 +137,7 @@ do
     if client.server_capabilities.documentFormattingProvider then
       vimrc.map("n", "<Space>f", function()
         vim.lsp.buf.format { async = true }
-      end,                                              nil, "Format buffer")
+      end,                                                    nil, "Format buffer")
     end
     if client.server_capabilities.implementationProvider then
       vimrc.map("n", "gi", vim.lsp.buf.implementation,        nil, "List implementations")
