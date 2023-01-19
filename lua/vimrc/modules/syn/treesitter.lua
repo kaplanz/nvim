@@ -91,10 +91,6 @@ treesitter.setup {
     lsp_interop = {
       enable = true,
       border = "rounded",
-      peek_definition_code = {
-        ["<M-k>"]   = "@function.outer",
-        ["<M-C-k>"] = "@class.outer",
-      },
     },
   },
 }
