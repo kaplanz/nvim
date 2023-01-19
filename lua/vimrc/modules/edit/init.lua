@@ -6,12 +6,16 @@
 require("vimrc.modules.edit.dial")
 
 local comment   = require("mini.comment")
+local move      = require("mini.move")
 local pairs     = require("mini.pairs")
 local retrail   = require("retrail")
 local surround  = require("mini.surround")
 
 -- Fast and familiar per-line commenting
 comment.setup {}
+
+-- Move any selection in any direction
+move.setup {}
 
 -- Automatically manage character pairs
 pairs.setup {}
