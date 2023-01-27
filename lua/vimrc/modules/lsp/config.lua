@@ -6,6 +6,7 @@
 local cmp       = require("cmp_nvim_lsp")
 local lspconfig = require("lspconfig")
 local mason     = require("mason-lspconfig")
+local null      = require("null-ls")
 local telescope = require("telescope.builtin")
 
 -- Prepare capabilities, handlers, and on_attach
@@ -215,4 +216,13 @@ mason.setup_handlers {
       },
     }
   end,
+}
+
+-- Register and setup null-ls
+null.setup {
+  on_attach = on_attach,
+  sources = {
+    null.builtins.formatting.black,
+    null.builtins.formatting.isort,
+  },
 }

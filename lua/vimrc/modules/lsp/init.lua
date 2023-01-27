@@ -4,4 +4,3 @@
 -- SPDX-License-Identifier: MIT
 
 require("vimrc.modules.lsp.config")
-require("vimrc.modules.lsp.null")
