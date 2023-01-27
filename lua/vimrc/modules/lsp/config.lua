@@ -185,7 +185,7 @@ mason.setup_handlers {
       settings = {
         ["rust-analyzer"] = {
           assist = {
-            emitMistUse = true,
+            emitMustUse = true,
           },
           imports = {
             granularity = {
