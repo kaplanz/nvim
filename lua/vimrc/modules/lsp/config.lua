@@ -169,7 +169,6 @@ lspconfig.util.default_config = vim.tbl_extend(
   }
 )
 
-
 -- Registers the provided `handlers`, to be called by mason when an installed
 -- server supported by lspconfig is ready to be setup.
 mason.setup_handlers {

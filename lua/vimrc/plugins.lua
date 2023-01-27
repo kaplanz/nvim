@@ -8,54 +8,18 @@ local lazy = require("lazy")
 lazy.setup({
   -- Colors
   {
-    -- nordic
-    "AlexvZyl/nordic.nvim",
-    -- nightfox
-    "EdenEast/nightfox.nvim",
-    -- kanagawa
-    "rebelot/kanagawa.nvim",
-    -- rose-pine
-    { 'rose-pine/neovim', name = 'rose-pine' },
     -- everforest
     "sainnhe/everforest",
+    -- kanagawa
+    "rebelot/kanagawa.nvim",
+    -- nightfox
+    "EdenEast/nightfox.nvim",
+    -- nordic
+    "AlexvZyl/nordic.nvim",
+    -- rose-pine
+    { "rose-pine/neovim", name = "rose-pine" },
     -- sourcerer
     "xero/sourcerer.vim",
-  },
-
-  -- Editing
-  {
-    -- Fast and familiar per-line commenting
-    "echasnovski/mini.comment",
-    -- Move any selection in any direction
-    "echasnovski/mini.move",
-    -- Automatically manage character pairs
-    "echasnovski/mini.pairs",
-    -- Fast and feature-rich surround actions
-    "echasnovski/mini.surround",
-    -- Modal multiple cursors
-    "mg979/vim-visual-multi",
-    -- Enhanced increment/decrement
-    "monaqa/dial.nvim",
-    -- Whitespace management
-    "kaplanz/nvim-retrail",
-  },
-
-  -- Extensions
-  {
-    -- Searches, substitutions, and abbreviations
-    "tpope/vim-abolish",
-    -- Unix file manipulation
-    "tpope/vim-eunuch",
-    -- Repeat plugin maps
-    "tpope/vim-repeat",
-    -- Heuristically set buffer options
-    "tpope/vim-sleuth",
-    -- Handy bracket mappings
-    "tpope/vim-unimpaired",
-    -- Additional text objects
-    "wellle/targets.vim",
-    -- Handle line numbers in file names
-    "wsdjeg/vim-fetch",
   },
 
   -- Completion
@@ -93,6 +57,42 @@ lazy.setup({
     {
       "mfussenegger/nvim-dap",
     },
+  },
+
+  -- Editing
+  {
+    -- Fast and familiar per-line commenting
+    "echasnovski/mini.comment",
+    -- Move any selection in any direction
+    "echasnovski/mini.move",
+    -- Automatically manage character pairs
+    "echasnovski/mini.pairs",
+    -- Fast and feature-rich surround actions
+    "echasnovski/mini.surround",
+    -- Modal multiple cursors
+    "mg979/vim-visual-multi",
+    -- Enhanced increment/decrement
+    "monaqa/dial.nvim",
+    -- Whitespace management
+    "kaplanz/nvim-retrail",
+  },
+
+  -- Extensions
+  {
+    -- Searches, substitutions, and abbreviations
+    "tpope/vim-abolish",
+    -- Unix file manipulation
+    "tpope/vim-eunuch",
+    -- Repeat plugin maps
+    "tpope/vim-repeat",
+    -- Heuristically set buffer options
+    "tpope/vim-sleuth",
+    -- Handy bracket mappings
+    "tpope/vim-unimpaired",
+    -- Additional text objects
+    "wellle/targets.vim",
+    -- Handle line numbers in file names
+    "wsdjeg/vim-fetch",
   },
 
   -- Language Server Protocol
