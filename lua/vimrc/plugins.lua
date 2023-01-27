@@ -8,6 +8,8 @@ local lazy = require("lazy")
 lazy.setup({
   -- Colors
   {
+    -- nordic
+    "AlexvZyl/nordic.nvim",
     -- nightfox
     "EdenEast/nightfox.nvim",
     -- kanagawa
