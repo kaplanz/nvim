@@ -197,8 +197,8 @@ mason.setup_handlers {
       },
     }
   end,
-  ["sumneko_lua"] = function(_)
-    lspconfig.sumneko_lua.setup {
+  ["lua_ls"] = function(_)
+    lspconfig.lua_ls.setup {
       settings = {
         Lua = {
           diagnostics = {
