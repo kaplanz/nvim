@@ -5,20 +5,20 @@
 
 require("vimrc.modules.edit.dial")
 
+local autopairs = require("nvim-autopairs")
 local comment   = require("mini.comment")
 local move      = require("mini.move")
-local pairs     = require("mini.pairs")
 local retrail   = require("retrail")
 local surround  = require("mini.surround")
+
+-- Super powerful autopairs
+autopairs.setup {}
 
 -- Fast and familiar per-line commenting
 comment.setup {}
 
 -- Move any selection in any direction
 move.setup {}
-
--- Automatically manage character pairs
-pairs.setup {}
 
 -- Whitespace management
 retrail.setup {}
