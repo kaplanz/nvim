@@ -65,8 +65,6 @@ lazy.setup({
     "echasnovski/mini.comment",
     -- Move any selection in any direction
     "echasnovski/mini.move",
-    -- Automatically manage character pairs
-    "echasnovski/mini.pairs",
     -- Fast and feature-rich surround actions
     "echasnovski/mini.surround",
     -- Modal multiple cursors
@@ -75,6 +73,8 @@ lazy.setup({
     "monaqa/dial.nvim",
     -- Whitespace management
     "kaplanz/nvim-retrail",
+    -- Super powerful autopairs
+    "windwp/nvim-autopairs",
   },
 
   -- Extensions
