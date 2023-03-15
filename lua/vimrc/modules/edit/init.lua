@@ -7,9 +7,10 @@ require("vimrc.modules.edit.dial")
 
 local autopairs = require("nvim-autopairs")
 local mini = {
-  comment  = require("mini.comment"),
-  move     = require("mini.move"),
-  surround = require("mini.surround"),
+  comment   = require("mini.comment"),
+  move      = require("mini.move"),
+  splitjoin = require("mini.splitjoin"),
+  surround  = require("mini.surround"),
 }
 local retrail   = require("retrail")
 
@@ -18,6 +19,9 @@ autopairs.setup {}
 
 -- Fast and familiar per-line commenting
 mini.comment.setup {}
+
+-- Split and join arguments
+mini.splitjoin.setup {}
 
 -- Move any selection in any direction
 mini.move.setup {}
