@@ -65,6 +65,8 @@ lazy.setup({
     "echasnovski/mini.comment",
     -- Move any selection in any direction
     "echasnovski/mini.move",
+    -- Split and join arguments
+    "echasnovski/mini.splitjoin",
     -- Fast and feature-rich surround actions
     "echasnovski/mini.surround",
     -- Modal multiple cursors
