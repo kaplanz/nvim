@@ -6,6 +6,3 @@
 
 -- load vimrc
 require("vimrc").setup()
-
--- use pretty print
-pprint = vim.pretty_print
