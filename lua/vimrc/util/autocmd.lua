@@ -5,21 +5,21 @@
 -- Vim:         set fdl=0 fdm=marker:
 
 -- Create an autocmd
-local function autocmd(event, pattern, callback)
+local function autocmd(event, pattern, callback, opts)
   vim.api.nvim_create_autocmd(event, {
     pattern  = pattern,
     callback = callback,
+    unpack(opts or {})
   })
 end
 
 -- Create an augroup
 local function augroup(name, setup)
   local group = vim.api.nvim_create_augroup(name, {})
-  setup(function(event, pattern, callback)
-    vim.api.nvim_create_autocmd(event, {
-      group    = group,
-      pattern  = pattern,
-      callback = callback,
+  setup(function(event, pattern, callback, opts)
+    autocmd(event, pattern, callback, {
+      group = group,
+      unpack(opts or {})
     })
   end)
 end
