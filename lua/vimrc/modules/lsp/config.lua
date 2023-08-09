@@ -9,6 +9,8 @@ local mason     = require("mason-lspconfig")
 local null      = require("null-ls")
 local telescope = require("telescope.builtin")
 
+local vimrc     = require("vimrc")
+
 -- Prepare capabilities, handlers, and on_attach
 local capabilities
 do
@@ -79,9 +81,9 @@ do
   end
 
   -- Show line diagnostics in virtual text
-  vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-    callback = function() vim.diagnostic.show() end,
-  })
+  vimrc.autocmd({ "CursorHold", "CursorHoldI" }, nil, function()
+    vim.diagnostic.show()
+  end)
 end
 
 local on_attach
@@ -96,17 +98,16 @@ do
         hi! LspReferenceText cterm=bold
         hi! LspReferenceWrite cterm=bold
       ]]
-      local group = vim.api.nvim_create_augroup("LspDocumentHighlight", {})
-      vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-        group = group,
-        buffer = bufnr,
-        callback = vim.lsp.buf.document_highlight,
-      })
-      vim.api.nvim_create_autocmd("CursorMoved", {
-        group = group,
-        buffer = bufnr,
-        callback = vim.lsp.buf.clear_references,
-      })
+      vimrc.augroup("LspDocumentHighlight", function(autocmd)
+        autocmd({ "CursorHold", "CursorHoldI" }, nil,
+          vim.lsp.buf.document_highlight, {
+          buffer = bufnr,
+        })
+        autocmd("CursorMoved", nil,
+          vim.lsp.buf.clear_references, {
+          buffer = bufnr,
+        })
+      end)
     end
 
     -- See `:help vim.lsp.*` for documentation on any of the below functions
