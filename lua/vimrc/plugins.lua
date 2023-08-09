@@ -158,10 +158,8 @@ lazy.setup({
         "kyazdani42/nvim-web-devicons",
       },
     },
-    -- Create custom submodes and menus
-    "anuvyklack/hydra.nvim",
-    -- Create key bindings that stick
-    "folke/which-key.nvim",
+    -- Show next key clues
+    "echasnovski/mini.clue",
     -- UI for nvim-lsp progress
     "j-hui/fidget.nvim",
     -- Ultra fold in Neovim
