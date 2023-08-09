@@ -6,6 +6,8 @@
 local telescope = require("telescope")
 local builtin   = require("telescope.builtin")
 
+local vimrc = require("vimrc")
+
 telescope.load_extension("fzf")
 
 -- Require module setup
@@ -36,6 +38,12 @@ telescope.setup {
     prompt_prefix = " ",
     -- The character(s) that will be shown in front of the current selection.
     selection_caret = "» ",
+    -- Set the borderchars of telescope floating windows.
+    borderchars = {
+      prompt  = vimrc.vars.border.inner,
+      results = vimrc.vars.border.inner,
+      preview = vimrc.vars.border.inner,
+    },
     -- Your mappings to override telescope's default mappings.
     mappings = {
       i = {

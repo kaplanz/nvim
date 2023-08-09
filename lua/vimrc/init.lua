@@ -17,6 +17,9 @@ M.autocmd = util.autocmd.autocmd
 -- Create a keymap
 M.map     = util.keymap.map
 
+-- Global variables
+M.vars    = util.vars
+
 -- Set up vimrc
 function M.setup()
   -- Bootstrap

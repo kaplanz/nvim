@@ -4,8 +4,10 @@
 -- SPDX-License-Identifier: MIT
 
 return {
-  -- Utilities for autocmds
+  -- Autocmds
   autocmd = require("vimrc.util.autocmd"),
-  -- Utilities for keymaps
+  -- Keymaps
   keymap = require("vimrc.util.keymap"),
+  -- Variables
+  vars = require("vimrc.util.vars"),
 }
