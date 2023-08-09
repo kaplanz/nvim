@@ -8,6 +8,20 @@ local gitconf   = require("gitsigns.config").config
 local hydra     = require("hydra")
 local which_key = require("which-key")
 
+
+-- Create mouse popup menu
+vim.cmd([[
+  aunmenu *
+  vnoremenu PopUp.Cut                     "+x
+  vnoremenu PopUp.Copy                    "+y
+  anoremenu PopUp.Paste                   "+gP
+  vnoremenu PopUp.Paste                   "+P
+  vnoremenu PopUp.Delete                  "_x
+  nnoremenu PopUp.Select\ All             ggVG
+  vnoremenu PopUp.Select\ All             gg0oG$
+  inoremenu PopUp.Select\ All             <C-Home><C-O>VG
+]])
+
 -- Create custom submodes and menus
 do
   local hint
