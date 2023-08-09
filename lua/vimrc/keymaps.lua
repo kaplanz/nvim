@@ -17,4 +17,4 @@ vimrc.map("n", "<Leader><Leader>", "<Leader>", nil, "Perform mapleader action")
 ---------------
 
 -- Write to file
-  vimrc.map("n", "<C-s>", "<Cmd>update<CR>", nil, "Save buffer")
+vimrc.map("n", "<C-s>", "<Cmd>update<CR>", nil, "Save buffer")
