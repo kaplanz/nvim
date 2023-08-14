@@ -190,6 +190,11 @@ lazy.setup({
         require("indent_blankline")
       end,
     },
+    -- Hiding colorcolumn when unneeded
+    {
+      "m4xshen/smartcolumn.nvim",
+      opts = {},
+    },
     -- Blazing fast statusline
     {
       "nvim-lualine/lualine.nvim",
