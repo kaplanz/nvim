@@ -74,7 +74,7 @@ lazy.setup({
     -- Enhanced increment/decrement
     "monaqa/dial.nvim",
     -- Whitespace management
-    "kaplanz/nvim-retrail",
+    "kaplanz/retrail.nvim",
     -- Super powerful autopairs
     "windwp/nvim-autopairs",
   },
