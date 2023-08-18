@@ -165,11 +165,9 @@ lazy.setup({
     -- Ultra fold in Neovim
     {
       "kevinhwang91/nvim-ufo",
-      config = function()
-        require("ufo").setup {
-          open_fold_hl_timeout = 0,
-        }
-      end,
+      opts = {
+        open_fold_hl_timeout = 0,
+      },
       dependencies = {
         "kevinhwang91/promise-async",
       },
@@ -186,9 +184,7 @@ lazy.setup({
     -- Show vertical lines for indent
     {
       "lukas-reineke/indent-blankline.nvim",
-      config = function()
-        require("indent_blankline")
-      end,
+      opts = {},
     },
     -- Hiding colorcolumn when unneeded
     {
