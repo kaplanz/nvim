@@ -59,6 +59,13 @@ vimrc.augroup("Vimrc", function(autocmd)
     vim.cmd.retab()
   end)
 
+  -- Automatically close quickfix window after selection
+  autocmd("FileType", "qf", function()
+    vimrc.map("n", "<CR>", "<CR>:cclose<CR>", {
+      buffer = true
+    }, "Select item and close quickfix window")
+  end)
+
   -- When a terminal job is starting, configure the terminal buffer
   autocmd("TermOpen", nil, function()
     -- Disable line numbers in terminal buffers

@@ -11,6 +11,23 @@
 vim.g.mapleader = ","
 -- Bypass mapleader action
 vimrc.map("n", "<Leader><Leader>", "<Leader>", nil, "Perform mapleader action")
+-- Toggle quickfix
+vimrc.map("n", "<Leader>q", function()
+  -- Check if quickfix window is open
+  local qfopen = false
+  for _, win in pairs(vim.fn.getwininfo()) do
+    if win.quickfix == 1 then
+      qfopen = true
+      break
+    end
+  end
+  -- Toggle quickfix window
+  if qfopen then
+    vim.cmd.cclose()
+  else
+    vim.cmd.copen()
+  end
+end, nil, "Toggle quickfix window")
 
 ---------------
 --  Actions  --
