@@ -162,6 +162,11 @@ lazy.setup({
     "echasnovski/mini.clue",
     -- UI for nvim-lsp progress
     "j-hui/fidget.nvim",
+    -- Better quickfix window in Neovim
+    {
+      "kevinhwang91/nvim-bqf",
+      ft = "qf"
+    },
     -- Ultra fold in Neovim
     {
       "kevinhwang91/nvim-ufo",
