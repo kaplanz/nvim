@@ -34,6 +34,14 @@ vim.opt.shiftwidth  =  4
 vim.opt.softtabstop = -1
 -- }}}
 
+-- Locations {{{
+if vim.fn.executable("rg") then
+-- Use ripgrep as the grep program
+  vim.opt.grepprg = "rg --vimgrep --no-heading --hidden --smart-case"
+  vim.opt.grepformat:prepend("%f:%l:%c:%m")
+end
+-- }}}
+
 -- Path {{{
 vim.opt.path:append("**")
 -- }}}
