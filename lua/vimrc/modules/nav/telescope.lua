@@ -8,6 +8,7 @@ local builtin   = require("telescope.builtin")
 
 local vimrc = require("vimrc")
 
+-- Load extensions
 telescope.load_extension("fzf")
 
 -- Require module setup
@@ -68,14 +69,15 @@ telescope.setup {
 
 -- Configure mappings
 do
+  -- Functions
+  local find_hidden = function()
+    builtin.find_files { hidden = true }
+  end
   -- Set up keymaps
-  -- Builtins
-  vimrc.map("n", "<F1>", builtin.help_tags,   nil, "List help tags")
+  vimrc.map("n", "<F1>",  builtin.help_tags,  nil, "List help tags")
   vimrc.map("n", "<M-b>", builtin.buffers,    nil, "List buffers")
   vimrc.map("n", "<M-f>", builtin.find_files, nil, "List files")
-  vimrc.map("n", "<M-F>", function()
-    builtin.find_files { hidden = true }
-  end,                             nil, "List hidden files")
+  vimrc.map("n", "<M-F>", find_hidden,        nil, "List hidden files")
   vimrc.map("n", "<M-o>", builtin.oldfiles,   nil, "List oldfiles")
   vimrc.map("n", "<M-g>", builtin.live_grep,  nil, "Live grep")
   vimrc.map("n", "<M-s>", builtin.builtin,    nil, "Launch telescope")
