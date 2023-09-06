@@ -11,21 +11,26 @@ vim.opt.foldexpr   = "nvim_treesitter#foldexpr()"
 
 treesitter.setup {
   -- A list of parser names, or "all"
-  ensure_installed = {
-    "bash",
-    "c",
-    "cpp",
-    "help",
-    "lua",
-    "python",
-    "rust",
-    "vim",
-  },
-  -- Consistent syntax highlighting.
+  ensure_installed = {},
+
+  -- Install parsers synchronously (only applied to `ensure_installed`)
+  sync_install = false,
+
+  -- Automatically install missing parsers when entering buffer
+  auto_install = true,
+
+  -- List of parsers to ignore installing (for "all")
+  ignore_install = { "javascript" },
+
+  -- Consistent syntax highlighting
   highlight = {
     enable = true,
   },
-  -- Incremental selection based on the named nodes from the grammar.
+
+  -- Declare modules (unused; required by LSP)
+  modules = {},
+
+  -- Incremental selection based on the named nodes from the grammar
   incremental_selection = {
     enable = true,
     -- Mappings for incremental selection (visual mappings)
@@ -40,11 +45,13 @@ treesitter.setup {
       node_decremental  = "<M-e>",
     },
   },
-  -- Indentation based on treesitter for the `=` operator.
+
+  -- Indentation based on treesitter for the `=` operator
   indent = {
     enanle = true,
   },
-  -- Syntax aware text-objects, select, move, swap, and peek support.
+
+  -- Syntax aware text-objects, select, move, swap, and peek support
   textobjects = {
     -- Text object selection
     select = {
