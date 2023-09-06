@@ -1,7 +1,7 @@
 # nvim
 
 <p align="center">
-  <img width="100" height="100" src="./docs/neovim-logo.svg"/>
+  <img width="100" height="100" src="./docs/assets/img/neovim-logo.svg"/>
 </p>
 
 <p align="center">
