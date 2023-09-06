@@ -144,6 +144,11 @@ do
     if client.server_capabilities.implementationProvider then
       vimrc.map("n", "gi", vim.lsp.buf.implementation,        nil, "List implementations")
     end
+    if client.server_capabilities.inlayHintProvider then
+      vimrc.map("n", "<Space>h", function()
+        vim.lsp.inlay_hint(0, nil)
+      end,                                                    nil, "Toggle inlay hints")
+    end
     if client.server_capabilities.referencesProvider then
       vimrc.map("n", "gr", vim.lsp.buf.references,            nil, "List references")
     end
@@ -205,6 +210,9 @@ mason.setup_handlers {
           diagnostics = {
             -- Get the language server to recognize the `vim` global
             globals = { "vim" },
+          },
+          hint = {
+            enable = true,
           },
           workspace = {
             -- Make the server aware of Neovim runtime files
