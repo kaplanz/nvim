@@ -38,12 +38,6 @@ telescope.setup {
     prompt_prefix = " ",
     -- The character(s) that will be shown in front of the current selection.
     selection_caret = "» ",
-    -- Set the borderchars of telescope floating windows.
-    borderchars = {
-      prompt  = vimrc.vars.border.inner,
-      results = vimrc.vars.border.inner,
-      preview = vimrc.vars.border.inner,
-    },
     -- Your mappings to override telescope's default mappings.
     mappings = {
       i = {
