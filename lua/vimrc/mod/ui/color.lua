@@ -4,4 +4,4 @@
 -- SPDX-License-Identifier: MIT
 
 -- Set colorscheme
-vim.cmd.colorscheme("rose-pine")
+vim.cmd.colorscheme("deku")
