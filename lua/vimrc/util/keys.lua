@@ -1,4 +1,4 @@
--- File:        keymap.lua
+-- File:        keys.lua
 -- Author:      Zakhary Kaplan <https://zakhary.dev>
 -- Created:     12 Sep 2020
 -- SPDX-License-Identifier: MIT

@@ -6,38 +6,25 @@
 local util = require("vimrc.util")
 
 local M = {}
-_G.vimrc = M
+_G.vimrc = M -- make vimrc global
 
 -- Create an augroup
-M.augroup = util.autocmd.augroup
-
+M.augroup = util.auto.augroup
 -- Create an autocmd
-M.autocmd = util.autocmd.autocmd
-
+M.autocmd = util.auto.autocmd
 -- Create a keymap
-M.map     = util.keymap.map
-
+M.map     = util.keys.map
 -- Global variables
 M.vars    = util.vars
 
 -- Set up vimrc
 function M.setup()
+  -- Builtin
+  require("vimrc.vim")
   -- Bootstrap
   require("vimrc.boot")
-
-  -- Install plugins
-  require("vimrc.plugins")
-
-  -- Configure packages
-  require("vimrc.packages")
-
-  -- General configuration
-  require("vimrc.options")
-  require("vimrc.autocmds")
-  require("vimrc.keymaps")
-
-  -- Configure modules
-  require("vimrc.modules")
+  -- Modules
+  require("vimrc.mod")
 end
 
 return M
