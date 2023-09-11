@@ -5,7 +5,9 @@
 
 return {
   -- lush
-  "rktjmp/lush.nvim",
+  { "kaplanz/deku.nvim", dependencies = {
+    "rktjmp/lush.nvim",
+  } },
   -- everforest
   "sainnhe/everforest",
   -- kanagawa
