@@ -3,4 +3,4 @@
 -- Created:     20 Dec 2022
 -- SPDX-License-Identifier: MIT
 
-require("vimrc.modules.vcs.git")
+require("vimrc.mod.syn.treesitter")

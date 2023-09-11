@@ -5,9 +5,9 @@
 
 return {
   -- Autocmds
-  autocmd = require("vimrc.util.autocmd"),
+  auto = require("vimrc.util.auto"),
   -- Keymaps
-  keymap = require("vimrc.util.keymap"),
+  keys = require("vimrc.util.keys"),
   -- Variables
   vars = require("vimrc.util.vars"),
 }

@@ -1,4 +1,4 @@
--- File:        options.lua
+-- File:        opts.lua
 -- Author:      Zakhary Kaplan <https://zakhary.dev>
 -- Created:     05 Jun 2019
 -- SPDX-License-Identifier: MIT

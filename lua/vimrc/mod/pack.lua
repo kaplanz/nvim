@@ -1,4 +1,4 @@
--- File:        packages.lua
+-- File:        pack.lua
 -- Author:      Zakhary Kaplan <https://zakhary.dev>
 -- Created:     25 Jul 2022
 -- SPDX-License-Identifier: MIT
@@ -29,7 +29,7 @@ lspconfig.setup {
   -- installed.
   -- Example: { "rust_analyzer@nightly", "lua_ls" }
   -- This setting has no relation with the `automatic_installation` setting.
-  ensure_installed = { "lua_ls" },
+  ensure_installed = {},
 
   -- Whether servers that are set up (via lspconfig) should be automatically
   -- installed if they're not already installed. This setting has no relation

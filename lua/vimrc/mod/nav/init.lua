@@ -3,5 +3,5 @@
 -- Created:     20 Dec 2022
 -- SPDX-License-Identifier: MIT
 
-require("vimrc.modules.nav.telescope")
-require("vimrc.modules.nav.tree")
+require("vimrc.mod.nav.telescope")
+require("vimrc.mod.nav.tree")
