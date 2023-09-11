@@ -1,6 +1,6 @@
 -- File:        init.lua
 -- Author:      Zakhary Kaplan <https://zakhary.dev>
--- Created:     20 Dec 2022
+-- Created:     05 Aug 2021
 -- SPDX-License-Identifier: MIT
 
-require("vimrc.modules.lsp.config")
+return {}

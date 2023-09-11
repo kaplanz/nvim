@@ -5,7 +5,7 @@
 
 -- Bootstrap `lazy.nvim` if not currently installed
 local path = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(path) then
+if not vim.uv.fs_stat(path) then
   vim.fn.system {
     "git",
     "clone",
@@ -16,3 +16,10 @@ if not vim.loop.fs_stat(path) then
   }
 end
 vim.opt.runtimepath:prepend(path)
+
+-- Install plugins
+require("lazy").setup("vimrc.plug", {
+  ui = {
+    border = "rounded",
+  },
+})

@@ -4,25 +4,28 @@
 -- SPDX-License-Identifier: MIT
 
 -- Completion
-require("vimrc.modules.cmp")
+require("vimrc.mod.cmp")
 
 -- Debug Adapter Protocol
-require("vimrc.modules.dap")
+require("vimrc.mod.dap")
 
 -- Editing
-require("vimrc.modules.edit")
+require("vimrc.mod.edit")
 
 -- Language Server Protocol
-require("vimrc.modules.lsp")
+require("vimrc.mod.lsp")
 
 -- Navigation
-require("vimrc.modules.nav")
+require("vimrc.mod.nav")
+
+-- Package management
+require("vimrc.mod.pack")
 
 -- Syntax
-require("vimrc.modules.syn")
+require("vimrc.mod.syn")
 
 -- User Interface
-require("vimrc.modules.ui")
+require("vimrc.mod.ui")
 
 -- Version Control System
-require("vimrc.modules.vcs")
+require("vimrc.mod.vcs")
