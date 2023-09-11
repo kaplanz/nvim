@@ -20,6 +20,7 @@ vim.opt.termguicolors = true
 
 -- Completion {{{
 vim.opt.completeopt = { "menuone", "noselect" }
+vim.opt.wildoptions:prepend("fuzzy")
 -- }}}
 
 -- Cursor {{{
