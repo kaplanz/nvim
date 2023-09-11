@@ -74,16 +74,11 @@ do
   }
 
   -- Change diagnostic symbols in the sign column (gutter)
-  local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+  local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
   for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
   end
-
-  -- Show line diagnostics in virtual text
-  vimrc.autocmd({ "CursorHold", "CursorHoldI" }, nil, function()
-    vim.diagnostic.show()
-  end)
 end
 
 local on_attach
