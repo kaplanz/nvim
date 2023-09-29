@@ -28,10 +28,10 @@ Installation is as simple as cloning this repository into your Neovim home:
 git clone https://git.zakhary.dev/nvim ~/.config/nvim
 ```
 
-Afterwards, install plugins using [packer.nvim][packer]:
+Afterwards, install plugins using [lazy.nvim][lazy]:
 
 ```vim
-PackerSync
+Lazy sync
 ```
 
 ... and that's it! You should now be ready to hack away.
@@ -45,16 +45,16 @@ pull, plugins may need to be synced.
 
 ### Plugins
 
-Plugins are managed using [packer.nvim][packer]. To update a plugin, use:
+Plugins are managed using [lazy.nvim][lazy]. To update a plugin, use:
 
 ```vim
-PackerUpdate <plugin>
+Lazy update <plugin>
 ```
 
 Or, to update all plugins:
 
 ```vim
-PackerUpdate
+Lazy update
 ```
 
 ### LSP
@@ -69,4 +69,4 @@ file. Neovim may need to be restarted after install for the first time.
 [mason]:      https://github.com/williamboman/mason.nvim
 [mason-help]: https://github.com/williamboman/mason.nvim/blob/main/doc/mason.txt
 [neovim]:     https://neovim.io
-[packer]:     https://github.com/wbthomason/packer.nvim
+[lazy]:       https://github.com/folke/lazy.nvim
