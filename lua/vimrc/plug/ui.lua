@@ -21,7 +21,7 @@ return {
   -- Dim inactive windows
   { "levouh/tint.nvim", opts = {} },
   -- Show vertical lines for indent
-  { "lukas-reineke/indent-blankline.nvim", opts = {} },
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   -- Hiding colorcolumn when unneeded
   { "m4xshen/smartcolumn.nvim", opts = {
     disabled_filetypes = {
