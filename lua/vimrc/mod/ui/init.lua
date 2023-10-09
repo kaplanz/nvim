@@ -4,6 +4,7 @@
 -- SPDX-License-Identifier: MIT
 
 require("vimrc.mod.ui.color")
+require("vimrc.mod.ui.fold")
 require("vimrc.mod.ui.menu")
 require("vimrc.mod.ui.statusline")
 require("vimrc.mod.ui.tabline")

@@ -5,10 +5,6 @@
 
 local treesitter = require("nvim-treesitter.configs")
 
--- Use treesitter for folds
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr   = "nvim_treesitter#foldexpr()"
-
 treesitter.setup {
   -- A list of parser names, or "all"
   ensure_installed = {},

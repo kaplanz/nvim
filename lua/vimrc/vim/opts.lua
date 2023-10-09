@@ -55,6 +55,7 @@ vim.opt.smartcase  = true
 -- User Interface {{{
 vim.opt.fillchars:append {
   diff      = "╱",
+  fold      = " ",
   foldclose = "▶",
   foldopen  = "▼",
 }
