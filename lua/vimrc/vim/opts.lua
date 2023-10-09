@@ -56,8 +56,9 @@ vim.opt.smartcase  = true
 vim.opt.fillchars:append {
   diff      = "╱",
   fold      = " ",
-  foldclose = "▶",
-  foldopen  = "▼",
+  foldclose = "",
+  foldsep   = "",
+  foldopen  = "",
 }
 vim.opt.foldcolumn     = "auto:1"
 vim.opt.foldlevelstart = 99
