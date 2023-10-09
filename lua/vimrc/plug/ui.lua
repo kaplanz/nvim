@@ -14,10 +14,6 @@ return {
   "j-hui/fidget.nvim",
   -- Better quickfix window in Neovim
   { "kevinhwang91/nvim-bqf", ft = "qf" },
-  -- Ultra fold in Neovim
-  { "kevinhwang91/nvim-ufo", dependencies = {
-    "kevinhwang91/promise-async",
-  }, opts = {} },
   -- Dim inactive windows
   { "levouh/tint.nvim", opts = {} },
   -- Show vertical lines for indent
