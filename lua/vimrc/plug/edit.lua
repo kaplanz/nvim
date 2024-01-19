@@ -18,6 +18,8 @@ return {
   { "echasnovski/mini.surround",  opts = {} },
   -- Whitespace management
   { "kaplanz/retrail.nvim",       opts = {} },
+  -- Draw ASCII diagrams
+  "jbyuki/venn.nvim",
   -- Modal multiple cursors
   "mg979/vim-visual-multi",
 }
