@@ -140,7 +140,7 @@ do
     end
     if client.server_capabilities.inlayHintProvider then
       vimrc.map("n", "<Space>h", function()
-        vim.lsp.inlay_hint(0, nil)
+        vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled())
       end,                                                    nil, "Toggle inlay hints")
     end
     if client.server_capabilities.referencesProvider then
