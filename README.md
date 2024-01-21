@@ -30,26 +30,6 @@ configuration for the editor that I use as my daily driver.
 > Install requires Neovim 0.9+. Always review the code before installing a
 > configuration.
 
-<details>
-  <summary>
-    If you're just looking to try out the configuration, see here.
-  </summary>
-
-  Clone the repository and install the plugins:
-
-  ```sh
-  git clone https://git.zakhary.dev/nvim ~/.config/kaplanz/nvim
-  NVIM_APPNAME=kaplanz/nvim nvim --headless +"Lazy! sync" +qa
-  ```
-
-  Open Neovim with this config:
-
-  ```sh
-  NVIM_APPNAME=kaplanz/nvim nvim
-  ```
-
-</details>
-
 Installation is as simple as cloning this repository into your Neovim home:
 
 ```sh
