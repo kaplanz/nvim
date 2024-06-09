@@ -6,7 +6,7 @@
 local telescope = require("telescope")
 local builtin   = require("telescope.builtin")
 
-local vimrc = require("vimrc")
+local vimrc     = require("vimrc")
 
 -- Load extensions
 telescope.load_extension("fzf")

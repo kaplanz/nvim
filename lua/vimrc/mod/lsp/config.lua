@@ -52,9 +52,11 @@ do
       -- Format a diagnostic as text used to display it.
       format = function(diagnostic)
         local lnum = vim.api.nvim_win_get_cursor(0)[1] - 1
+        local dmsg = ""
         if diagnostic.lnum <= lnum and lnum <= diagnostic.end_lnum then
-          return diagnostic.message
+          dmsg = diagnostic.message
         end
+        return dmsg
       end,
     },
     -- Options for floating windows.
