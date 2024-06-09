@@ -82,18 +82,18 @@ cmp.setup {
       local kind   = item.kind
       local source = ({
         -- Vim-builtin
-        spell       = "暈",
-        calc        = " ",
+        spell                   = "󰓆 ",
+        calc                    = "󰃬 ",
         -- Neovim-builtin
-        nvim_lua    = " ",
+        nvim_lua                = " ",
         -- Snippets
-        snippy      = " ",
+        snippy                  = "󰅩 ",
         -- Language Server Protocol
-        nvim_lsp    = "ﮒ ",
-        nvim_lsp_signature_help  = "ﮒ ",
+        nvim_lsp                = "󰚔 ",
+        nvim_lsp_signature_help = "󰚔 ",
         -- Filesystem
-        path        = "ﱮ ",
-      })[entry.source.name] or " "
+        path                    = " ",
+      })[entry.source.name] or "󰇘 "
 
       item.kind = symbol
       item.menu = string.format(" %s (%s)", source, kind)
