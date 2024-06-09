@@ -38,7 +38,7 @@ telescope.setup {
     -- The character(s) that will be shown in front of Telescope's prompt.
     prompt_prefix = " ",
     -- The character(s) that will be shown in front of the current selection.
-    selection_caret = "» ",
+    selection_caret = "❯ ",
     -- Your mappings to override telescope's default mappings.
     mappings = {
       i = {
