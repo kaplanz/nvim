@@ -28,6 +28,10 @@ vim.opt.cursorline = true
 vim.opt.whichwrap  = "b,s,<,>,[,]"
 -- }}}
 
+-- Editing {{{
+vim.opt.textwidth = 80
+-- }}}
+
 -- Indentation {{{
 vim.opt.expandtab   = true
 vim.opt.shiftround  = true
