@@ -116,8 +116,6 @@ do
     end,                                                      nil, "List workspace folders")
     vimrc.map("n", "<Space>wr", vim.lsp.buf.remove_workspace_folder)
     vimrc.map("n", "K", vim.lsp.buf.hover)
-    vimrc.map("n", "]d", vim.diagnostic.goto_next,            nil, "Go to next diagnostic")
-    vimrc.map("n", "[d", vim.diagnostic.goto_prev,            nil, "Go to previous diagnostic")
 
     -- Set some key bindings conditional on server capabilities
     if client.server_capabilities.codeActionProvider then
