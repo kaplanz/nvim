@@ -75,7 +75,7 @@ cmp.setup {
   -- Customize completion menu appearance
   formatting = {
     -- An array of completion fields to specify their order.
-    fields = {"kind", "abbr", "menu"},
+    fields = { "kind", "abbr", "menu" },
     -- The function used to customize the appearance of the completion menu.
     format = function(entry, item)
       local symbol = lspkind.symbol_map[item.kind]
@@ -95,8 +95,8 @@ cmp.setup {
         path                    = " ",
       })[entry.source.name] or "󰇘 "
 
-      item.kind = symbol
-      item.menu = string.format(" %s (%s)", source, kind)
+      item.kind    = symbol
+      item.menu    = string.format(" %s (%s)", source, kind)
 
       return item
     end,
@@ -105,30 +105,25 @@ cmp.setup {
   -- Array of the source configuration to use
   -- (The order will be used to the completion menu's sort order)
   sources = cmp.config.sources(
-    -- Language Server Protocol
-    {
+    { -- Language Server Protocol
       { name = "nvim_lsp" },
       { name = "nvim_lsp_signature_help" },
     },
-    -- Neovim-builtin
-    {
+    { -- Neovim-builtin
       { name = "nvim_lua" },
     },
-    -- Snippets
-    {
+    { -- Snippets
       { name = "snippy" },
     },
-    -- Vim-builtin
-    {
+    { -- Vim-builtin
       { name = "spell" },
       { name = "calc" },
     },
-    -- Filesystem
-    {
+    { -- Filesystem
       { name = "path" },
     },
-    -- Extra
-    {}
+    { -- Extra
+    }
   ),
 
   -- The view class used to customize nvim-cmp's appearance
@@ -161,11 +156,11 @@ cmp.setup {
 snippy.setup {
   mappings = {
     is = {
-        ["<Tab>"] = "expand_or_advance",
-        ["<S-Tab>"] = "previous",
+      ["<Tab>"] = "expand_or_advance",
+      ["<S-Tab>"] = "previous",
     },
     nx = {
-        ["<Leader>x"] = "cut_text",
+      ["<Leader>x"] = "cut_text",
     },
   },
 }
