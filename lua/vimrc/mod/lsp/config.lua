@@ -88,9 +88,9 @@ do
     -- Highlight symbol under cursor
     if client.server_capabilities.documentHighlightProvider then
       vim.cmd [[
-        hi! LspReferenceRead cterm=bold
-        hi! LspReferenceText cterm=bold
-        hi! LspReferenceWrite cterm=bold
+        hi! link LspReferenceRead  Nayru
+        hi! link LspReferenceText  Nayru
+        hi! link LspReferenceWrite Nayru
       ]]
       vimrc.augroup("LspDocumentHighlight", function(autocmd)
         autocmd({ "CursorHold", "CursorHoldI" }, nil,
