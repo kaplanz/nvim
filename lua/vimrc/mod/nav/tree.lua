@@ -31,16 +31,16 @@ require("nvim-tree").setup {
     ignore_list = {}
   },
   -- show lsp diagnostics in the signcolumn
-  diagnostics = {
+  diagnostics         = {
     enable = true,
   },
   -- git integration with icons and colors
-  git = {
+  git                 = {
     -- ignore files based on `.gitignore`
     ignore = true,
   },
   -- UI rendering setup
-  renderer = {
+  renderer            = {
     -- Appends a trailing slash to folder names
     add_trailing = true,
     -- Compact folders that only contain a single folder into one node in the
@@ -55,14 +55,14 @@ require("nvim-tree").setup {
     },
   },
   -- filtering options
-  filters = {
+  filters             = {
     -- custom list of string that will not be shown
-    custom = {".git", "node_modules"},
+    custom = { ".git", "node_modules" },
   },
 }
 
 -- Actions
 vimrc.map("n", "<Leader>n", function()
   api.tree.toggle({ focus = false })
-end,  nil, "Toggle tree")
+end, nil, "Toggle tree")
 vimrc.map("n", "<Leader>N", api.tree.open, nil, "Focus tree")

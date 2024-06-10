@@ -5,10 +5,14 @@
 
 return {
   -- Treesitter configurations
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", dependencies = {
-    -- Show code context
-    "nvim-treesitter/nvim-treesitter-context",
-    -- Syntax aware text-objects
-    "nvim-treesitter/nvim-treesitter-textobjects",
-  } },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    dependencies = {
+      -- Show code context
+      "nvim-treesitter/nvim-treesitter-context",
+      -- Syntax aware text-objects
+      "nvim-treesitter/nvim-treesitter-textobjects",
+    }
+  },
 }

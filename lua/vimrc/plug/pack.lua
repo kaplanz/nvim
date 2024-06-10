@@ -5,7 +5,10 @@
 
 return {
   -- Portable package manager for Neovim
-  { "williamboman/mason.nvim", dependencies = {
-    "williamboman/mason-lspconfig.nvim",
-  } },
+  {
+    "williamboman/mason.nvim",
+    dependencies = {
+      "williamboman/mason-lspconfig.nvim",
+    }
+  },
 }

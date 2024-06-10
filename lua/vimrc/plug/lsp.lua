@@ -5,12 +5,17 @@
 
 return {
   -- Lsp common configurations
-  { "neovim/nvim-lspconfig", dependencies = {
-    "williamboman/mason-lspconfig.nvim",
-  } },
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = {
+      "williamboman/mason-lspconfig.nvim",
+    }
+  },
   -- Add pictograms to LSP
   "onsails/lspkind-nvim",
-  { "stevearc/aerial.nvim", dependencies = {
+  {
+    "stevearc/aerial.nvim",
+    dependencies = {
       "nvim-treesitter/nvim-treesitter",
       "nvim-tree/nvim-web-devicons"
     },

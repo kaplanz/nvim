@@ -9,9 +9,9 @@
 ----------------
 
 -- Buffers {{{
-vim.opt.confirm    = true
-vim.opt.undofile   = true
-vim.opt.updatetime = 100
+vim.opt.confirm       = true
+vim.opt.undofile      = true
+vim.opt.updatetime    = 100
 -- }}}
 
 -- Colours {{{
@@ -19,29 +19,29 @@ vim.opt.termguicolors = true
 -- }}}
 
 -- Completion {{{
-vim.opt.completeopt = { "menuone", "noselect" }
+vim.opt.completeopt   = { "menuone", "noselect" }
 vim.opt.wildoptions:prepend("fuzzy")
 -- }}}
 
 -- Cursor {{{
-vim.opt.cursorline = true
-vim.opt.whichwrap  = "b,s,<,>,[,]"
+vim.opt.cursorline  = true
+vim.opt.whichwrap   = "b,s,<,>,[,]"
 -- }}}
 
 -- Editing {{{
-vim.opt.textwidth = 80
+vim.opt.textwidth   = 80
 -- }}}
 
 -- Indentation {{{
 vim.opt.expandtab   = true
 vim.opt.shiftround  = true
-vim.opt.shiftwidth  =  4
+vim.opt.shiftwidth  = 4
 vim.opt.softtabstop = -1
 -- }}}
 
 -- Locations {{{
 if vim.fn.executable("rg") then
--- Use ripgrep as the grep program
+  -- Use ripgrep as the grep program
   vim.opt.grepprg = "rg --vimgrep --no-heading --hidden --smart-case"
   vim.opt.grepformat:prepend("%f:%l:%c:%m")
 end
@@ -73,18 +73,18 @@ vim.opt.listchars:append {
   extends  = "›",
   precedes = "‹",
 }
-vim.opt.number         = true
-vim.opt.pumblend       = 10
-vim.opt.scrolloff      =  5
-vim.opt.signcolumn     =  "yes:1"
-vim.opt.showbreak      = "↪ "
-vim.opt.showmode       = false
-vim.opt.sidescrolloff  =  5
-vim.opt.winblend       = 10
-vim.opt.wrap           = false
+vim.opt.number        = true
+vim.opt.pumblend      = 10
+vim.opt.scrolloff     = 5
+vim.opt.signcolumn    = "yes:1"
+vim.opt.showbreak     = "↪ "
+vim.opt.showmode      = false
+vim.opt.sidescrolloff = 5
+vim.opt.winblend      = 10
+vim.opt.wrap          = false
 -- }}}
 
 -- Window {{{
-vim.opt.splitbelow = true
-vim.opt.splitright = true
+vim.opt.splitbelow    = true
+vim.opt.splitright    = true
 -- }}}

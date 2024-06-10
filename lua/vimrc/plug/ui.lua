@@ -5,29 +5,38 @@
 
 return {
   -- Snazzy bufferline
-  { "akinsho/bufferline.nvim", dependencies = {
-    "kyazdani42/nvim-web-devicons",
-  } },
+  {
+    "akinsho/bufferline.nvim",
+    dependencies = {
+      "kyazdani42/nvim-web-devicons",
+    }
+  },
   -- Show next key clues
   "echasnovski/mini.clue",
   -- UI for nvim-lsp progress
-  { "j-hui/fidget.nvim", opts = {} },
+  { "j-hui/fidget.nvim",                   opts = {} },
   -- Better quickfix window in Neovim
-  { "kevinhwang91/nvim-bqf", ft = "qf" },
+  { "kevinhwang91/nvim-bqf",               ft = "qf" },
   -- Dim inactive windows
-  { "levouh/tint.nvim", opts = {} },
+  { "levouh/tint.nvim",                    opts = {} },
   -- Show vertical lines for indent
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   -- Hiding colorcolumn when unneeded
-  { "m4xshen/smartcolumn.nvim", opts = {
-    disabled_filetypes = {
-      "help", "lazy", "mason",
+  {
+    "m4xshen/smartcolumn.nvim",
+    opts = {
+      disabled_filetypes = {
+        "help", "lazy", "mason",
+      }
     }
-  } },
+  },
   -- Blazing fast statusline
-  { "nvim-lualine/lualine.nvim", dependencies = {
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = {
       "kyazdani42/nvim-web-devicons",
-  } },
+    }
+  },
   -- Improve the default vim.ui interfaces
   "stevearc/dressing.nvim",
 }

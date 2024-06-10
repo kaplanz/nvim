@@ -47,8 +47,8 @@ vimrc.augroup("Vimrc", function(autocmd)
     local pos = vim.fn.line("'\"")
     local eol = vim.fn.line("$")
     if pos >= 1 and pos <= eol
-      and not vim.bo.filetype:match("commit")
-      and not vim.bo.filetype:match("gitrebase")
+        and not vim.bo.filetype:match("commit")
+        and not vim.bo.filetype:match("gitrebase")
     then
       vim.cmd.normal { "g`\"", bang = true }
     end
