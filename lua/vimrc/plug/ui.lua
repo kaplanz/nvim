@@ -11,7 +11,7 @@ return {
   -- Show next key clues
   "echasnovski/mini.clue",
   -- UI for nvim-lsp progress
-  "j-hui/fidget.nvim",
+  { "j-hui/fidget.nvim", opts = {} },
   -- Better quickfix window in Neovim
   { "kevinhwang91/nvim-bqf", ft = "qf" },
   -- Dim inactive windows
