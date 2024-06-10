@@ -12,7 +12,7 @@ local path = {
   end,
 }
 
-local mason = path.concat{ vim.fn.stdpath("data"), "/mason/bin" }
+local mason = path.concat { vim.fn.stdpath("data"), "/mason/bin" }
 
 -- Adapters
 do
@@ -37,7 +37,7 @@ end
 -- Configurations
 do
   -- C/C++/Rust
-  dap.configurations.c = {
+  dap.configurations.c      = {
     {
       type = "codelldb",
       name = "Launch file",
@@ -49,8 +49,8 @@ do
       stopOnEntry = true,
     },
   }
-  dap.configurations.cpp  = dap.configurations.c
-  dap.configurations.rust = dap.configurations.c
+  dap.configurations.cpp    = dap.configurations.c
+  dap.configurations.rust   = dap.configurations.c
   -- Python
   dap.configurations.python = {
     {
@@ -64,17 +64,17 @@ end
 
 -- Keymaps
 do
-  vimrc.map("n", "<F5>",       dap.continue,          nil, "Continue")
-  vimrc.map("n", "<F10>",      dap.step_over,         nil, "Step over")
-  vimrc.map("n", "<F11>",      dap.step_into,         nil, "Step into")
-  vimrc.map("n", "<F12>",      dap.step_out,          nil, "Step out")
-  vimrc.map("n", "<Leader>b",  dap.toggle_breakpoint, nil, "Toggle breakpoint")
-  vimrc.map("n", "<Leader>B",  function()
+  vimrc.map("n", "<F5>", dap.continue, nil, "Continue")
+  vimrc.map("n", "<F10>", dap.step_over, nil, "Step over")
+  vimrc.map("n", "<F11>", dap.step_into, nil, "Step into")
+  vimrc.map("n", "<F12>", dap.step_out, nil, "Step out")
+  vimrc.map("n", "<Leader>b", dap.toggle_breakpoint, nil, "Toggle breakpoint")
+  vimrc.map("n", "<Leader>B", function()
     dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
-  end,                                                nil, "Set breakpoint condition")
+  end, nil, "Set breakpoint condition")
   vimrc.map("n", "<Leader>lp", function()
     dap.set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
-  end,                                                nil, "Set log point message")
-  vimrc.map("n", "<Leader>dr", dap.repl.open,         nil, "Open REPL")
-  vimrc.map("n", "<Leader>dl", dap.run_last,          nil, "Run last")
+  end, nil, "Set log point message")
+  vimrc.map("n", "<Leader>dr", dap.repl.open, nil, "Open REPL")
+  vimrc.map("n", "<Leader>dl", dap.run_last, nil, "Run last")
 end

@@ -21,9 +21,9 @@ config.augends:register_group {
     augend.date.alias["%Y/%m/%d"],
     augend.date.alias["%d/%m/%Y"],
     augend.date.new {
-        pattern = "%d %b %Y",
-        default_kind = "day",
-        only_valid = true,
+      pattern = "%d %b %Y",
+      default_kind = "day",
+      only_valid = true,
     },
     -- Constant
     augend.constant.alias.Alpha,
@@ -57,11 +57,11 @@ local function map(mode, lhs, rhs, opts, hint)
 end
 
 -- Increment
-map("n", "<C-a>", dial.inc_normal(),   nil, "Add [count] to the value at the cursor")
-map("v", "<C-a>", dial.inc_visual(),   nil, "Add [count] to the value at the cursor")
+map("n", "<C-a>", dial.inc_normal(), nil, "Add [count] to the value at the cursor")
+map("v", "<C-a>", dial.inc_visual(), nil, "Add [count] to the value at the cursor")
 map("v", "g<C-a>", dial.inc_gvisual(), nil, "Add [count] to the value at the cursor")
 
 -- Decrement
-map("n", "<C-x>", dial.dec_normal(),   nil, "Subtract [count] to the value at the cursor")
-map("v", "<C-x>", dial.dec_visual(),   nil, "Subtract [count] to the value at the cursor")
+map("n", "<C-x>", dial.dec_normal(), nil, "Subtract [count] to the value at the cursor")
+map("v", "<C-x>", dial.dec_visual(), nil, "Subtract [count] to the value at the cursor")
 map("v", "g<C-x>", dial.dec_gvisual(), nil, "Subtract [count] to the value at the cursor")

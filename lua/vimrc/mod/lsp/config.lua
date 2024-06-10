@@ -35,14 +35,14 @@ do
   handlers = {
     ["textDocument/hover"] = vim.lsp.with(
       vim.lsp.handlers.hover, {
-      -- Style of (optional) window border.
-      border = border,
-    }),
+        -- Style of (optional) window border.
+        border = border,
+      }),
     ["textDocument/signatureHelp"] = vim.lsp.with(
       vim.lsp.handlers.signature_help, {
-      -- Style of (optional) window border.
-      border = border,
-    }),
+        -- Style of (optional) window border.
+        border = border,
+      }),
   }
 
   -- Customize how diagnostics are displayed
@@ -97,60 +97,60 @@ do
       vimrc.augroup("LspDocumentHighlight", function(autocmd)
         autocmd({ "CursorHold", "CursorHoldI" }, nil,
           vim.lsp.buf.document_highlight, {
-          buffer = bufnr,
-        })
+            buffer = bufnr,
+          })
         autocmd("CursorMoved", nil,
           vim.lsp.buf.clear_references, {
-          buffer = bufnr,
-        })
+            buffer = bufnr,
+          })
       end)
     end
 
     -- See `:help vim.lsp.*` for documentation on any of the below functions
-    vimrc.map("n", "<Space>e", vim.diagnostic.open_float,     nil, "Show diagnostics")
-    vimrc.map("n", "<Space>q", vim.diagnostic.setloclist,     nil, "Set diagnostics")
+    vimrc.map("n", "<Space>e", vim.diagnostic.open_float, nil, "Show diagnostics")
+    vimrc.map("n", "<Space>q", vim.diagnostic.setloclist, nil, "Set diagnostics")
     vimrc.map("n", "<Space>so", function()
       telescope.lsp_document_symbols()
-    end,                                                      nil, "List symbols in buffer")
+    end, nil, "List symbols in buffer")
     vimrc.map("n", "<Space>wa", vim.lsp.buf.add_workspace_folder)
     vimrc.map("n", "<Space>wl", function()
       print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-    end,                                                      nil, "List workspace folders")
+    end, nil, "List workspace folders")
     vimrc.map("n", "<Space>wr", vim.lsp.buf.remove_workspace_folder)
     vimrc.map("n", "K", vim.lsp.buf.hover)
 
     -- Set some key bindings conditional on server capabilities
     if client.server_capabilities.codeActionProvider then
-      vimrc.map("n", "<Space>ca", vim.lsp.buf.code_action,    nil, "Perform code action")
-      vimrc.map("v", "<Space>ca", vim.lsp.buf.code_action,    nil, "Perform code action")
+      vimrc.map("n", "<Space>ca", vim.lsp.buf.code_action, nil, "Perform code action")
+      vimrc.map("v", "<Space>ca", vim.lsp.buf.code_action, nil, "Perform code action")
     end
     if client.server_capabilities.declarationProvider then
-      vimrc.map("n", "gD", vim.lsp.buf.declaration,           nil, "Jump to declaration")
+      vimrc.map("n", "gD", vim.lsp.buf.declaration, nil, "Jump to declaration")
     end
     if client.server_capabilities.definitionProvider then
-      vimrc.map("n", "gd", vim.lsp.buf.definition,            nil, "Jump to definition")
+      vimrc.map("n", "gd", vim.lsp.buf.definition, nil, "Jump to definition")
     end
     if client.server_capabilities.documentFormattingProvider then
       vimrc.map("n", "<Space>f", function()
         vim.lsp.buf.format { async = true }
-      end,                                                    nil, "Format buffer")
+      end, nil, "Format buffer")
     end
     if client.server_capabilities.implementationProvider then
-      vimrc.map("n", "gi", vim.lsp.buf.implementation,        nil, "List implementations")
+      vimrc.map("n", "gi", vim.lsp.buf.implementation, nil, "List implementations")
     end
     if client.server_capabilities.inlayHintProvider then
       vimrc.map("n", "<Space>h", function()
-        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0}))
-      end,                                                    nil, "Toggle inlay hints")
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }))
+      end, nil, "Toggle inlay hints")
     end
     if client.server_capabilities.referencesProvider then
-      vimrc.map("n", "gr", vim.lsp.buf.references,            nil, "List references")
+      vimrc.map("n", "gr", vim.lsp.buf.references, nil, "List references")
     end
     if client.server_capabilities.renameProvider then
-      vimrc.map("n", "<Space>rn", vim.lsp.buf.rename,         nil, "Rename symbol")
+      vimrc.map("n", "<Space>rn", vim.lsp.buf.rename, nil, "Rename symbol")
     end
     if client.server_capabilities.signatureHelpProvider then
-      vimrc.map("n", "<C-k>", vim.lsp.buf.signature_help,     nil, "Show signature help")
+      vimrc.map("n", "<C-k>", vim.lsp.buf.signature_help, nil, "Show signature help")
     end
     if client.server_capabilities.typeDefinitionProvider then
       vimrc.map("n", "<Space>D", vim.lsp.buf.type_definition, nil, "Jump to type definition")
