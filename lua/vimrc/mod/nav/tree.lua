@@ -3,6 +3,8 @@
 -- Created:     08 Aug 2021
 -- SPDX-License-Identifier: MIT
 
+local api = require("nvim-tree.api")
+
 -- Require module setup
 require("nvim-tree").setup {
   -- completely disable netrw
@@ -59,15 +61,8 @@ require("nvim-tree").setup {
   },
 }
 
--- Configure mappings
-do
-  -- Set up keymaps
-  local function map(mode, lhs, rhs, opts, hint)
-    opts = opts or { desc = hint }
-    vim.keymap.set(mode, lhs, rhs, opts)
-  end
-
-  -- Actions
-  map("n", "<Leader>n", "<Cmd>NvimTreeToggle<CR>",  nil, "Toggle tree")
-  map("n", "<Leader>N", "<Cmd>NvimTreeRefresh<CR>", nil, "Refresh tree")
-end
+-- Actions
+vimrc.map("n", "<Leader>n", function()
+  api.tree.toggle({ focus = false })
+end,  nil, "Toggle tree")
+vimrc.map("n", "<Leader>N", api.tree.open, nil, "Focus tree")

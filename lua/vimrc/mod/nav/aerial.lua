@@ -23,4 +23,7 @@ aerial.setup {
 }
 
 -- You probably also want to set a keymap to toggle aerial
-vimrc.map("n", "<Leader>a", aerial.toggle)
+vimrc.map("n", "<Leader>a", function()
+  aerial.toggle({ focus = false })
+end, nil, "Toggle aerial")
+vimrc.map("n", "<Leader>A", aerial.open, nil, "Focus aerial")
