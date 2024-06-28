@@ -31,6 +31,9 @@ do
   -- • "shadow": A drop shadow effect by blending with the background.
   local border = "rounded"
 
+  -- Use a rounded border for the UI
+  require('lspconfig.ui.windows').default_options.border = "rounded"
+
   -- LSP settings (for overriding per client)
   handlers = {
     ["textDocument/hover"] = vim.lsp.with(
