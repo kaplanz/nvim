@@ -9,6 +9,7 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    "debugloop/telescope-undo.nvim",
   },
   config = function()
     local telescope = require("telescope")
@@ -16,6 +17,7 @@ return {
 
     -- Load extensions
     telescope.load_extension("fzf")
+    telescope.load_extension("undo")
 
     -- Require module setup
     telescope.setup {
@@ -88,6 +90,7 @@ return {
       vimrc.fn.keymap("n", "<M-g>", builtin.live_grep, nil, "Live grep")
       vimrc.fn.keymap("n", "<M-s>", builtin.builtin, nil, "Launch telescope")
       vimrc.fn.keymap("n", "<M-S>", builtin.resume, nil, "Resume telescope")
+      vimrc.fn.keymap("n", "<M-u>", "<Cmd>Telescope undo<CR>", nil, "View undo tree")
     end
   end,
 }
