@@ -19,12 +19,6 @@ return {
     "levouh/tint.nvim",
     opts = {}
   },
-  -- Show vertical lines for indent
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
-    opts = {}
-  },
   -- Hiding colorcolumn when unneeded
   {
     "m4xshen/smartcolumn.nvim",
@@ -34,6 +28,4 @@ return {
       }
     }
   },
-  -- Improve the default vim.ui interfaces
-  "stevearc/dressing.nvim",
 }
