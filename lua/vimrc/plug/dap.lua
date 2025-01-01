@@ -3,7 +3,7 @@
 -- Created:     11 Sep 2023
 -- SPDX-License-Identifier: MIT
 
+-- Debug Adapter Protocol client
 return {
-  -- Debug Adapter Protocol client
   "mfussenegger/nvim-dap",
 }

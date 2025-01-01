@@ -13,12 +13,4 @@ return {
   },
   -- Add pictograms to LSP
   "onsails/lspkind-nvim",
-  {
-    "stevearc/aerial.nvim",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "nvim-tree/nvim-web-devicons"
-    },
-    opts = {},
-  }
 }

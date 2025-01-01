@@ -13,4 +13,4 @@
 -- o8o        `8      `8'     o888o o888o o888o o888o
 
 -- load vimrc
-require("vimrc").setup()
+require("vimrc")
