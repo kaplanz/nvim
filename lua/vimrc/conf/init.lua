@@ -3,5 +3,8 @@
 -- Created:     20 Dec 2022
 -- SPDX-License-Identifier: MIT
 
--- Lazy plugin manager
-require("vimrc.boot.lazy")
+-- Debug Adapter Protocol
+require("vimrc.conf.dap")
+
+-- Language Server Protocol
+require("vimrc.conf.lsp")

@@ -3,28 +3,22 @@
 -- Created:     05 Jul 2022
 -- SPDX-License-Identifier: MIT
 
-local util = require("vimrc.util")
-
-local M    = {}
-_G.vimrc   = M -- make vimrc global
-
--- Create an augroup
-M.augroup  = util.auto.augroup
--- Create an autocmd
-M.autocmd  = util.auto.autocmd
--- Create a keymap
-M.map      = util.keys.map
--- Global variables
-M.vars     = util.vars
-
--- Set up vimrc
-function M.setup()
-  -- Builtin
-  require("vimrc.vim")
-  -- Bootstrap
-  require("vimrc.boot")
-  -- Modules
-  require("vimrc.mod")
+-- Check if vimrc has already been loaded.
+if _G.vimrc then
+  goto done
 end
 
-return M
+-- Declare the global vimrc.
+_G.vimrc = {}
+
+-- Import required modules.
+_G.vimrc = vim.tbl_extend("error", _G.vimrc, require("vimrc.util"))
+
+-- Load executed configuration.
+require("vimrc.exec")
+require("vimrc.boot")
+require("vimrc.conf")
+
+-- Return the loaded vimrc.
+::done::
+return _G.vimrc
