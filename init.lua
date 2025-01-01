@@ -2,7 +2,6 @@
 -- Author:      Zakhary Kaplan <https://zakhary.dev>
 -- Created:     06 Aug 2021
 -- SPDX-License-Identifier: MIT
--- Vim:         set fdl=0 fdm=marker:
 
 -- ooooo      ooo              o8o
 -- `888b.     `8'              `"'
@@ -13,4 +12,4 @@
 -- o8o        `8      `8'     o888o o888o o888o o888o
 
 -- load vimrc
-require("vimrc").setup()
+require("vimrc")

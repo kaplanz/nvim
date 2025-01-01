@@ -4,23 +4,27 @@
 -- SPDX-License-Identifier: MIT
 
 return {
-  -- lush
+  -- deku
   {
     "kaplanz/deku.nvim",
     dependencies = {
       "rktjmp/lush.nvim",
-    }
+    },
+    init = function()
+      vim.cmd.colorscheme("deku")
+    end,
+    lazy = true,
   },
   -- everforest
-  "sainnhe/everforest",
+  { "sainnhe/everforest",     lazy = true },
   -- kanagawa
-  "rebelot/kanagawa.nvim",
+  { "rebelot/kanagawa.nvim",  lazy = true },
   -- nightfox
-  "EdenEast/nightfox.nvim",
+  { "EdenEast/nightfox.nvim", lazy = true },
   -- nordic
-  "AlexvZyl/nordic.nvim",
+  { "AlexvZyl/nordic.nvim",   lazy = true },
   -- rose-pine
-  { "rose-pine/neovim", name = "rose-pine" },
+  { "rose-pine/neovim",       name = "rose-pine", lazy = true },
   -- sourcerer
-  "xero/sourcerer.vim",
+  { "xero/sourcerer.vim",     lazy = true },
 }

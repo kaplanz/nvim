@@ -1,9 +1,10 @@
--- File:        dap.lua
+-- File:        rust.lua
 -- Author:      Zakhary Kaplan <https://zakhary.dev>
 -- Created:     11 Sep 2023
 -- SPDX-License-Identifier: MIT
 
--- Debug Adapter Protocol client
+-- Rust programming language
 return {
-  "mfussenegger/nvim-dap",
+  "rust-lang/rust.vim",
+  ft = "rust"
 }
