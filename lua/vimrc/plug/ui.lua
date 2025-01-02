@@ -24,7 +24,7 @@ return {
     "m4xshen/smartcolumn.nvim",
     opts = {
       disabled_filetypes = {
-        "help", "lazy", "mason",
+        "help", "lazy", "mason", "snacks_dashboard",
       }
     }
   },

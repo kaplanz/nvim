@@ -3,6 +3,8 @@
 -- Created:     19 Dec 2024
 -- SPDX-License-Identifier: MIT
 
+---@diagnostic disable: undefined-doc-name
+---@diagnostic disable: undefined-global
 return {
   "folke/snacks.nvim",
   priority = 1000,
@@ -18,7 +20,38 @@ return {
     -- Delete buffers without disrupting window layout
     bufdelete    = { enabled = true },
     -- Beautiful declarative dashboards
-    dashboard    = { enabled = true },
+    ---@class snacks.dashboard.Config
+    dashboard    = {
+      -- These settings are used by some built-in sections
+      preset = {
+        -- Used by the `keys` section to show keymaps.
+        -- Set your custom keymaps here.
+        -- When using a function, the `items` argument are the default keymaps.
+        ---@type snacks.dashboard.Item[]
+        keys = {
+          { icon = " ", key = "f", desc = "Find",
+            action = ":lua Snacks.dashboard.pick('files')" },
+          { icon = " ", key = "n", desc = "New",
+            action = ":ene | startinsert" },
+          { icon = " ", key = "g", desc = "Grep",
+            action = ":lua Snacks.dashboard.pick('live_grep')" },
+          { icon = " ", key = "r", desc = "Recents",
+            action = ":lua Snacks.dashboard.pick('oldfiles')" },
+          { icon = " ", key = "c", desc = "Config",
+            action = function()
+              Snacks.dashboard.pick("files", {
+                cwd = vim.fn.stdpath('config'),
+                follow = true
+              })
+            end },
+          { icon = " ", key = "s", desc = "Session", section = "session" },
+          { icon = "󰒲 ", key = "L", desc = "Lazy",
+            action = ":Lazy", enabled = package.loaded.lazy ~= nil },
+          { icon = " ", key = "q", desc = "Quit",
+            action = ":qa" },
+        },
+      },
+    },
     -- Pretty inspect & backtraces for debugging
     debug        = { enabled = false },
     -- Focus on the active scope by dimming the rest
@@ -70,21 +103,64 @@ return {
   },
   keys = {
     -- bufdelete
-    { "<Leader>bd", function() Snacks.bufdelete() end,               desc = "Delete buffer" },
+    {
+      "<Leader>bd",
+      function() Snacks.bufdelete() end,
+      desc = "Delete buffer",
+    },
     -- gitbrowse
-    { "<Leader>gB", function() Snacks.gitbrowse() end,               desc = "Git browse",                  mode = { "n", "v" } },
+    {
+      "<Leader>gB",
+      function() Snacks.gitbrowse() end,
+      desc = "Git browse",
+      mode = { "n", "v" },
+    },
     -- notifier
-    { "<Leader>un", function() Snacks.notifier.hide() end,           desc = "Dismiss all notifications" },
+    {
+      "<Leader>un",
+      function() Snacks.notifier.hide() end,
+      desc = "Dismiss all notifications"
+    },
     -- rename
-    { "<Leader>cR", function() Snacks.rename.rename_file() end,      desc = "Rename file" },
+    {
+      "<Leader>cR",
+      function() Snacks.rename.rename_file() end,
+      desc = "Rename file"
+    },
     -- scratch
-    { "<Leader>.",  function() Snacks.scratch() end,                 desc = "Toggle scratch buffer" },
-    { "<Leader>S",  function() Snacks.scratch.select() end,          desc = "Select scratch buffer" },
+    {
+      "<Leader>.",
+      function() Snacks.scratch() end,
+      desc = "Toggle scratch buffer"
+    },
+    {
+      "<Leader>S",
+      function() Snacks.scratch.select() end,
+      desc = "Select scratch buffer"
+    },
     -- words
-    { "]]",         function() Snacks.words.jump(vim.v.count1) end,  desc = "Next reference",              mode = { "n", "t" } },
-    { "[[",         function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev reference",              mode = { "n", "t" } },
+    {
+      "]]",
+      function() Snacks.words.jump(vim.v.count1) end,
+      desc = "Next reference",
+      mode = { "n", "t" }
+    },
+    {
+      "[[",
+      function() Snacks.words.jump(-vim.v.count1) end,
+      desc = "Prev reference",
+      mode = { "n", "t" }
+    },
     -- zen
-    { "<Leader>z",  function() Snacks.zen() end,                     desc = "Toggle zen mode" },
-    { "<Leader>Z",  function() Snacks.zen.zoom() end,                desc = "Toggle zen zoom" },
+    {
+      "<Leader>z",
+      function() Snacks.zen() end,
+      desc = "Toggle zen mode"
+    },
+    {
+      "<Leader>Z",
+      function() Snacks.zen.zoom() end,
+      desc = "Toggle zen zoom"
+    },
   },
 }
