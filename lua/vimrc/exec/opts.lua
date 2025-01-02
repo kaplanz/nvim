@@ -82,6 +82,8 @@ vim.opt.signcolumn    = "yes:1"
 vim.opt.showbreak     = "↪ "
 vim.opt.showmode      = false
 vim.opt.sidescrolloff = 5
+vim.opt.title         = true
+vim.opt.titlestring   = "%f%( [%M]%)"
 vim.opt.winblend      = 10
 vim.opt.wrap          = false
 -- }}}
