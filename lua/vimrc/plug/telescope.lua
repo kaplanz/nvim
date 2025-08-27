@@ -13,7 +13,6 @@ return {
   },
   config = function()
     local telescope = require("telescope")
-    local builtin   = require("telescope.builtin")
 
     -- Load extensions
     telescope.load_extension("fzf")
@@ -30,8 +29,8 @@ return {
         layout_strategy = "flex",
         -- Determines the default configuration values for layout strategies.
         layout_config = {
-          -- Horizontal layout has two columns, one for the preview and one for the
-          -- prompt and results.
+          -- Horizontal layout has two columns, one for the preview and one for
+          -- the prompt and results.
           horizontal = {
             prompt_position = "top",
           },
@@ -45,7 +44,8 @@ return {
         winblend = 10,
         -- The character(s) that will be shown in front of Telescope's prompt.
         prompt_prefix = " ",
-        -- The character(s) that will be shown in front of the current selection.
+        -- The character(s) that will be shown in front of the current
+        -- selection.
         selection_caret = "❯ ",
         -- Your mappings to override telescope's default mappings.
         mappings = {
@@ -71,26 +71,41 @@ return {
         -- extension_name = {
         --   extension_config_key = value,
         -- }
-        -- please take a look at the readme of the extension you want to configure
+        -- Please take a look at the readme of the extension you want to
+        -- configure.
       },
     }
 
     -- Configure mappings
     do
-      -- Functions
-      local find_hidden = function()
-        builtin.find_files { hidden = true }
-      end
       -- Set up keymaps
-      vimrc.fn.keymap("n", "<F1>", builtin.help_tags, nil, "List help tags")
-      vimrc.fn.keymap("n", "<M-b>", builtin.buffers, nil, "List buffers")
-      vimrc.fn.keymap("n", "<M-f>", builtin.find_files, nil, "List files")
-      vimrc.fn.keymap("n", "<M-F>", find_hidden, nil, "List hidden files")
-      vimrc.fn.keymap("n", "<M-o>", builtin.oldfiles, nil, "List oldfiles")
-      vimrc.fn.keymap("n", "<M-g>", builtin.live_grep, nil, "Live grep")
-      vimrc.fn.keymap("n", "<M-s>", builtin.builtin, nil, "Launch telescope")
-      vimrc.fn.keymap("n", "<M-S>", builtin.resume, nil, "Resume telescope")
-      vimrc.fn.keymap("n", "<M-u>", "<Cmd>Telescope undo<CR>", nil, "View undo tree")
+      vim.keymap.set("n", "<F1>",  function()
+        require("telescope.builtin").help_tags()
+      end, { desc = "List help tags" })
+      vim.keymap.set("n", "<M-b>", function()
+        require("telescope.builtin").buffers()
+      end, { desc = "List buffers" })
+      vim.keymap.set("n", "<M-f>", function()
+        require("telescope.builtin").find_files()
+      end, { desc = "List files" })
+      vim.keymap.set("n", "<M-F>", function()
+        require("telescope.builtin").find_files { hidden = true }
+      end, { desc = "List hidden files" })
+      vim.keymap.set("n", "<M-o>", function()
+        require("telescope.builtin").oldfiles()
+      end, { desc = "List oldfiles" })
+      vim.keymap.set("n", "<M-g>", function()
+        require("telescope.builtin").live_grep()
+      end, { desc = "Live grep" })
+      vim.keymap.set("n", "<M-s>", function()
+        require("telescope.builtin").builtin()
+      end, { desc = "Launch telescope" })
+      vim.keymap.set("n", "<M-S>", function()
+        require("telescope.builtin").resume()
+      end, { desc = "Resume telescope" })
+      vim.keymap.set("n", "<M-u>", function()
+        require("telescope-undo").undo()
+      end, { desc = "View undo tree" })
     end
   end,
 }

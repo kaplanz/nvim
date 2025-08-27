@@ -29,12 +29,18 @@ return {
   keys = {
     {
       "<Leader>a",
-      function() require("aerial").toggle({ focus = false }) end,
+      function() require("aerial").toggle { focus = false } end,
       desc = "Toggle aerial",
     },
     {
       "<Leader>A",
-      function() require("aerial").open() end,
+      function()
+        if vim.bo.filetype == "aerial" then
+          vim.cmd.wincmd "p"
+        else
+          require("aerial").open()
+        end
+      end,
       desc = "Focus aerial"
     },
   },

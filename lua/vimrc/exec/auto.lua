@@ -31,9 +31,10 @@ vimrc.fn.augroup("Vimrc", function(autocmd)
 
   -- Automatically close quickfix window after selection
   autocmd("FileType", "qf", function()
-    vimrc.fn.keymap("n", "<CR>", "<CR>:cclose<CR>", {
-      buffer = true
-    }, "Select item and close quickfix window")
+    vim.keymap.set("n", "<CR>", "<CR>:cclose<CR>", {
+      buffer = true,
+      desc = "Select quickfix item"
+    })
   end)
 
   -- When a terminal job is starting, configure the terminal buffer

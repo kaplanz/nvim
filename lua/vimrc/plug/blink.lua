@@ -18,6 +18,7 @@ return {
     -- Snippets
     "rafamadriz/friendly-snippets",
   },
+  event = { "InsertEnter", "CmdlineEnter" },
   -- use a release tag to download pre-built binaries
   version = "1.*",
 
@@ -66,9 +67,7 @@ return {
       documentation = {
         auto_show = true,
         auto_show_delay_ms = 0,
-        window = {
-          border = "solid",
-        },
+        window = { border = "solid" },
       },
       ghost_text = {
         enabled = true,

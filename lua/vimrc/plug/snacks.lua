@@ -3,8 +3,6 @@
 -- Created:     19 Dec 2024
 -- SPDX-License-Identifier: MIT
 
----@diagnostic disable: undefined-doc-name
----@diagnostic disable: undefined-global
 return {
   "folke/snacks.nvim",
   priority = 1000,
@@ -29,27 +27,54 @@ return {
         -- When using a function, the `items` argument are the default keymaps.
         ---@type snacks.dashboard.Item[]
         keys = {
-          { icon = " ", key = "f", desc = "Find",
-            action = ":lua Snacks.dashboard.pick('files')" },
-          { icon = " ", key = "n", desc = "New",
-            action = ":ene | startinsert" },
-          { icon = " ", key = "g", desc = "Grep",
-            action = ":lua Snacks.dashboard.pick('live_grep')" },
-          { icon = " ", key = "r", desc = "Recents",
-            action = ":lua Snacks.dashboard.pick('oldfiles')" },
-          { icon = " ", key = "c", desc = "Config",
-            action = function()
-              Snacks.dashboard.pick("files", {
-                cwd = vim.fn.stdpath('config'),
-                follow = true
-              })
-            end },
-          { icon = " ", key = "s", desc = "Session", section = "session" },
-          { icon = "󰒲 ", key = "L", desc = "Lazy",
-            action = ":Lazy", enabled = package.loaded.lazy ~= nil },
-          { icon = " ", key = "q", desc = "Quit",
-            action = ":qa" },
+          {
+            icon = " ", key = "n", desc = "New File",
+            action = function() vim.cmd.enew() end,
+          },
+          {
+            icon = " ", key = "f", desc = "Find File",
+            action = function() Snacks.picker.files() end,
+          },
+          {
+            icon = "󰈭 ", key = "g", desc = "Find Word",
+            action = function() Snacks.picker.grep() end,
+          },
+          {
+            icon = " ", key = "o", desc = "Recents",
+            action = function() Snacks.picker.recent() end,
+          },
+          {
+            icon = " ", key = "'", desc = "Bookmarks", enabled = false,
+            action = function() Snacks.picker.marks() end,
+          },
+          {
+            icon = " ", key = "r", desc = "Restore",
+            action = function() require("resession").load("last") end,
+          },
+          {
+            icon = " ", key = "c", desc = "Settings",
+            action = function() Snacks.dashboard.pick("files", {
+                cwd = vim.fn.stdpath("config"), follow = true,
+            }) end,
+          },
+          {
+            icon = " ", key = "p", desc = "Plugins",
+            action = function() vim.cmd.Lazy() end,
+            enabled = package.loaded.lazy ~= nil,
+          },
+          {
+            icon = " ", key = "q", desc = "Quit",
+            action = function() vim.cmd.qall() end,
+          },
         },
+        -- Used by the `header` section
+        header = table.concat({
+        "          ▄▀▄     ▄▀▄          ",
+        "         ▄█░░▀▀▀▀▀░░█▄         ",
+        "     ▄▄  █░░░░░░░░░░░█  ▄▄     ",
+        "    █▄▄█ █░░▀░░┬░░▀░░█ █▄▄█    ",
+        "🮇🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀🮀▎",
+        }, "\n"),
       },
     },
     -- Pretty inspect & backtraces for debugging
@@ -99,7 +124,47 @@ return {
     -- Auto-show LSP references and quickly navigate between them
     words        = { enabled = true },
     -- Zen mode • distraction-free coding
-    zen          = { enabled = true },
+    zen          = {
+      -- You can add any `Snacks.toggle` id here.
+      -- Toggle state is restored when the window is closed.
+      -- Toggle config options are NOT merged.
+      ---@type table<string, boolean>
+      toggles = { dim = true },
+      --- Callback when the window is opened.
+      ---@param win snacks.win
+      on_open = function(win)
+        -- Disable snacks indent
+        vim.b[win.buf].snacks_indent_old = vim.b[win.buf].snacks_indent
+        vim.b[win.buf].snacks_indent = false
+      end,
+      --- Callback when the window is closed.
+      ---@param win snacks.win
+      on_close = function(win)
+        -- Restore snacks indent
+        vim.b[win.buf].snacks_indent = vim.b[win.buf].snacks_indent_old
+      end,
+      win = {
+        width = function()
+          return math.min(120, math.floor(vim.o.columns * 0.75))
+        end,
+        height = 0.9,
+        backdrop = {
+          transparent = false,
+          win = { wo = { winhighlight = "Normal:Normal" } },
+        },
+        wo = {
+          number = false,
+          relativenumber = false,
+          signcolumn = "no",
+          foldcolumn = "0",
+          winbar = "",
+          winblend = 0,
+          list = false,
+          showbreak = "NONE",
+          winhighlight = "Normal:Normal",
+        },
+      },
+    },
   },
   keys = {
     -- bufdelete
@@ -108,59 +173,54 @@ return {
       function() Snacks.bufdelete() end,
       desc = "Delete buffer",
     },
+    -- dashboard
+    {
+      "<Leader>h",
+      function() Snacks.dashboard() end,
+      desc = "Show launch screen",
+    },
     -- gitbrowse
     {
       "<Leader>gB",
       function() Snacks.gitbrowse() end,
-      desc = "Git browse",
       mode = { "n", "v" },
-    },
-    -- notifier
-    {
-      "<Leader>un",
-      function() Snacks.notifier.hide() end,
-      desc = "Dismiss all notifications"
+      desc = "Git browse",
     },
     -- rename
     {
-      "<Leader>cR",
+      "<Leader>R",
       function() Snacks.rename.rename_file() end,
-      desc = "Rename file"
+      desc = "Rename file",
     },
     -- scratch
     {
       "<Leader>.",
       function() Snacks.scratch() end,
-      desc = "Toggle scratch buffer"
+      desc = "Toggle scratch buffer",
     },
     {
       "<Leader>S",
       function() Snacks.scratch.select() end,
-      desc = "Select scratch buffer"
+      desc = "Select scratch buffer",
     },
     -- words
     {
       "]]",
       function() Snacks.words.jump(vim.v.count1) end,
+      mode = { "n", "t" },
       desc = "Next reference",
-      mode = { "n", "t" }
     },
     {
       "[[",
       function() Snacks.words.jump(-vim.v.count1) end,
+      mode = { "n", "t" },
       desc = "Prev reference",
-      mode = { "n", "t" }
     },
     -- zen
     {
       "<Leader>z",
       function() Snacks.zen() end,
-      desc = "Toggle zen mode"
-    },
-    {
-      "<Leader>Z",
-      function() Snacks.zen.zoom() end,
-      desc = "Toggle zen zoom"
+      desc = "Toggle zen mode",
     },
   },
 }

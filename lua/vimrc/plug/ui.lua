@@ -7,17 +7,12 @@ return {
   -- UI for nvim-lsp progress
   {
     "j-hui/fidget.nvim",
-    opts = {}
+    opts = {},
   },
   -- Better quickfix window in Neovim
   {
     "kevinhwang91/nvim-bqf",
-    ft = "qf"
-  },
-  -- Dim inactive windows
-  {
-    "levouh/tint.nvim",
-    opts = {}
+    ft = "qf",
   },
   -- Hiding colorcolumn when unneeded
   {
@@ -25,8 +20,8 @@ return {
     opts = {
       disabled_filetypes = {
         "help", "lazy", "mason", "snacks_dashboard",
-      }
-    }
+      },
+    },
   },
   -- Improve the default vim.ui interfaces
   "stevearc/dressing.nvim",

@@ -6,10 +6,13 @@
 -- Enable LSP to automatically start
 vim.lsp.enable {
   "clangd",
+  "html",
   "luals",
   "pyright",
   "ruff",
   "rust_analyzer",
+  "sourcekit",
+  "ts_ls",
 }
 
 -- Override the default configuration
@@ -47,11 +50,11 @@ vim.lsp.config("*",
       do
         vim.keymap.set("n", "gd", function()
           vim.lsp.buf.definition()
-        end, { desc = "vim.lsp.buf.definition()" })
+        end, { desc = "Jump to symbol definition" })
 
         vim.keymap.set("n", "gD", function()
           vim.lsp.buf.type_definition()
-        end, { desc = "vim.lsp.buf.type_definition()" })
+        end, { desc = "Jump to type definition" })
       end
     end,
   }
@@ -83,15 +86,15 @@ vim.diagnostic.config {
 -- server does not support a capability, an error message is displayed
 -- rather than exhibiting different behaviour.
 do
-  vim.keymap.set("n", "<Space>e", function()
+  vim.keymap.set("n", "<Space>le", function()
     vim.diagnostic.open_float()
-  end, { desc = "vim.diagnostic.open_float()" })
+  end, { desc = "Show diagnostics" })
 
-  vim.keymap.set("n", "<Space>f", function()
+  vim.keymap.set("n", "<Space>lf", function()
     vim.lsp.buf.format { async = true }
-  end, { desc = "vim.lsp.buf.format()" })
+  end, { desc = "Format buffer" })
 
-  vim.keymap.set("n", "<Space>h", function()
+  vim.keymap.set("n", "<Space>lh", function()
     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-  end, { desc = "vim.lsp.inlay_hint.enable()" })
+  end, { desc = "Toggles inlay hints" })
 end

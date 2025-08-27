@@ -5,13 +5,13 @@
 
 return {
   -- Super powerful autopairs
-  { "windwp/nvim-autopairs",      opts = {} },
+  { "windwp/nvim-autopairs", opts = {} },
   -- Whitespace management
-  { "kaplanz/retrail.nvim",       opts = {} },
-  -- Draw ASCII diagrams
-  "jbyuki/venn.nvim",
-  -- Modal multiple cursors
-  "mg979/vim-visual-multi",
+  { "kaplanz/retrail.nvim",  opts = {} },
   -- Hex editing done right
-  { "RaafatTurki/hex.nvim",       opts = {} },
+  {
+    "RaafatTurki/hex.nvim",
+    ft = "xxd",
+    opts = {},
+  },
 }

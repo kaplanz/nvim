@@ -3,16 +3,15 @@
 -- Created:     12 Sep 2020
 -- SPDX-License-Identifier: MIT
 
----------------
--- Mapleader --
----------------
+--
+--- Leader
+--
 
 -- Change mapleader
-vim.g.mapleader = ","
--- Bypass mapleader action
-vimrc.fn.keymap("n", "<Leader><Leader>", "<Leader>", nil, "Perform mapleader action")
+vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 -- Toggle quickfix
-vimrc.fn.keymap("n", "<Leader>q", function()
+vim.keymap.set("n", "<Leader>q", function()
   -- Check if quickfix window is open
   local qfopen = false
   for _, win in pairs(vim.fn.getwininfo()) do
@@ -27,11 +26,11 @@ vimrc.fn.keymap("n", "<Leader>q", function()
   else
     vim.cmd.copen()
   end
-end, nil, "Toggle quickfix window")
+end, { desc = "Toggle quickfix window" })
 
----------------
---  Actions  --
----------------
+--
+--- Actions
+--
 
 -- Write to file
-vimrc.fn.keymap("n", "<C-s>", "<Cmd>update<CR>", nil, "Save buffer")
+vim.keymap.set("n", "<Leader>w", vim.cmd.update, { desc = "Save" })

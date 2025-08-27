@@ -11,7 +11,8 @@ return {
       "rktjmp/lush.nvim",
     },
     init = function()
-      vim.cmd.colorscheme("deku")
+      vim.cmd.colorscheme "deku"
+      -- vim.cmd[[highlight Normal ctermbg=none guibg=none]]
     end,
     lazy = true,
   },
@@ -24,7 +25,5 @@ return {
   -- nordic
   { "AlexvZyl/nordic.nvim",   lazy = true },
   -- rose-pine
-  { "rose-pine/neovim",       name = "rose-pine", lazy = true },
-  -- sourcerer
-  { "xero/sourcerer.vim",     lazy = true },
+  { "rose-pine/neovim",       lazy = true, name = "rose-pine" },
 }

@@ -23,12 +23,6 @@ M = {
       callback = callback,
     }, opts or {}))
   end,
-
-  -- Register a keymap within the vimrc.
-  keymap = function(mode, lhs, rhs, opts, hint)
-    opts = opts or { noremap = true, silent = true, desc = hint }
-    vim.keymap.set(mode, lhs, rhs, opts)
-  end
 }
 
 return M
