@@ -86,15 +86,15 @@ vim.diagnostic.config {
 -- server does not support a capability, an error message is displayed
 -- rather than exhibiting different behaviour.
 do
-  vim.keymap.set("n", "<Space>le", function()
+  vim.keymap.set("n", "gre", function()
     vim.diagnostic.open_float()
   end, { desc = "Show diagnostics" })
 
-  vim.keymap.set("n", "<Space>lf", function()
+  vim.keymap.set("n", "grf", function()
     vim.lsp.buf.format { async = true }
   end, { desc = "Format buffer" })
 
-  vim.keymap.set("n", "<Space>lh", function()
+  vim.keymap.set("n", "grh", function()
     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
   end, { desc = "Toggles inlay hints" })
 end
