@@ -7,7 +7,7 @@
 return {
   "folke/which-key.nvim",
   dependencies = {
-    "echasnovski/mini.icons",
+    "nvim-mini/mini.icons",
   },
   event = "VeryLazy",
   -- Your configuration comes here or leave it empty to use the default

@@ -5,11 +5,11 @@
 
 return {
   -- Fast and familiar per-line commenting
-  { "echasnovski/mini.comment",   opts = {} },
+  { "nvim-mini/mini.comment",   opts = {} },
   -- Move any selection in any direction
-  { "echasnovski/mini.move",      opts = {} },
+  { "nvim-mini/mini.move",      opts = {} },
   -- Split and join arguments
-  { "echasnovski/mini.splitjoin", opts = {} },
+  { "nvim-mini/mini.splitjoin", opts = {} },
   -- Fast and feature-rich surround actions
-  { "echasnovski/mini.surround",  opts = {} },
+  { "nvim-mini/mini.surround",  opts = {} },
 }
