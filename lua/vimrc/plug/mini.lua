@@ -4,6 +4,8 @@
 -- SPDX-License-Identifier: MIT
 
 return {
+  -- Align text interactively
+  { "nvim-mini/mini.align",     opts = {} },
   -- Fast and familiar per-line commenting
   { "nvim-mini/mini.comment",   opts = {} },
   -- Move any selection in any direction
