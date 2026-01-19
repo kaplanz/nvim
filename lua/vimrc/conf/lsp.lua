@@ -13,6 +13,7 @@ vim.lsp.enable {
   "rust_analyzer",
   "sourcekit",
   "ts_ls",
+  "ty",
 }
 
 -- Override the default configuration
