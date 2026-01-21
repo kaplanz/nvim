@@ -6,13 +6,14 @@
 return {
   -- Treesitter configurations
   "nvim-treesitter/nvim-treesitter",
+  branch = "master",
   dependencies = {
     -- Show code context
     "nvim-treesitter/nvim-treesitter-context",
     -- Syntax aware text-objects
     "nvim-treesitter/nvim-treesitter-textobjects",
   },
-  event = "VeryLazy",
+  event = { "BufReadPost", "BufNewFile" },
   build = ":TSUpdate",
   opts = {
     -- A list of parser names, or "all"
@@ -25,7 +26,7 @@ return {
     auto_install = true,
 
     -- List of parsers to ignore installing (for "all")
-    ignore_install = { "javascript" },
+    ignore_install = {},
 
     -- Consistent syntax highlighting
     highlight = {
@@ -53,7 +54,7 @@ return {
 
     -- Indentation based on treesitter for the `=` operator
     indent = {
-      enanle = true,
+      enable = true,
     },
 
     -- Syntax aware text-objects, select, move, swap, and peek support
