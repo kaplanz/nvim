@@ -46,7 +46,7 @@ vim.lsp.config("*",
       -- Override maps for LSP functions.
       --
       -- These mappings override default vim functionality in the event that a
-      -- LSP client is attached, and should not exhibit unexepcted behaviour
+      -- LSP client is attached, and should not exhibit unexpected behaviour
       -- than if they were used when an LSP client is not attached.
       do
         vim.keymap.set("n", "gd", function()
