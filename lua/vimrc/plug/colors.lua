@@ -9,10 +9,6 @@ return {
     "kaplanz/deku.nvim",
     lazy = true,
     dependencies = { "rktjmp/lush.nvim" },
-    init = function()
-      vim.cmd.colorscheme "deku"
-      -- vim.cmd[[highlight Normal ctermbg=none guibg=none]]
-    end,
   },
   -- catppuccin
   {

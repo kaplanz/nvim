@@ -19,6 +19,9 @@ require("vimrc.exec")
 require("vimrc.boot")
 require("vimrc.conf")
 
+-- Set the colorscheme
+vim.cmd.colorscheme "deku"
+
 -- Return the loaded vimrc.
 ::done::
 return _G.vimrc
