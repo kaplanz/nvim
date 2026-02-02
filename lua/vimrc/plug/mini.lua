@@ -5,13 +5,28 @@
 
 return {
   -- Align text interactively
-  { "nvim-mini/mini.align",     opts = {} },
+  {
+    "nvim-mini/mini.align",
+    opts = {},
+  },
   -- Fast and familiar per-line commenting
-  { "nvim-mini/mini.comment",   opts = {} },
+  {
+    "nvim-mini/mini.comment",
+    opts = {},
+  },
   -- Move any selection in any direction
-  { "nvim-mini/mini.move",      opts = {} },
+  {
+    "nvim-mini/mini.move",
+    opts = {},
+  },
   -- Split and join arguments
-  { "nvim-mini/mini.splitjoin", opts = {} },
+  {
+    "nvim-mini/mini.splitjoin",
+    opts = {},
+  },
   -- Fast and feature-rich surround actions
-  { "nvim-mini/mini.surround",  opts = {} },
+  {
+    "nvim-mini/mini.surround",
+    opts = {},
+  },
 }

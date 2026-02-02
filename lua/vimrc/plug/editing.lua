@@ -5,9 +5,15 @@
 
 return {
   -- Super powerful autopairs
-  { "windwp/nvim-autopairs", opts = {} },
+  {
+    "windwp/nvim-autopairs",
+    opts = {},
+  },
   -- Whitespace management
-  { "kaplanz/retrail.nvim",  opts = {} },
+  {
+    "kaplanz/retrail.nvim",
+    opts = {},
+  },
   -- Hex editing done right
   {
     "RaafatTurki/hex.nvim",

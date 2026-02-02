@@ -7,23 +7,43 @@ return {
   -- deku
   {
     "kaplanz/deku.nvim",
-    dependencies = {
-      "rktjmp/lush.nvim",
-    },
+    lazy = true,
+    dependencies = { "rktjmp/lush.nvim" },
     init = function()
       vim.cmd.colorscheme "deku"
       -- vim.cmd[[highlight Normal ctermbg=none guibg=none]]
     end,
+  },
+  -- catppuccin
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
     lazy = true,
   },
   -- everforest
-  { "sainnhe/everforest",     lazy = true },
+  {
+    "sainnhe/everforest",
+    lazy = true,
+  },
   -- kanagawa
-  { "rebelot/kanagawa.nvim",  lazy = true },
+  {
+    "rebelot/kanagawa.nvim",
+    lazy = true,
+  },
   -- nightfox
-  { "EdenEast/nightfox.nvim", lazy = true },
+  {
+    "EdenEast/nightfox.nvim",
+    lazy = true,
+  },
   -- nordic
-  { "AlexvZyl/nordic.nvim",   lazy = true },
+  {
+    "AlexvZyl/nordic.nvim",
+    lazy = true,
+  },
   -- rose-pine
-  { "rose-pine/neovim",       lazy = true, name = "rose-pine" },
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    lazy = true,
+  },
 }
