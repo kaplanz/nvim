@@ -20,4 +20,9 @@ return {
     ft = "xxd",
     opts = {},
   },
+  -- Highlight colors for Neovim
+  {
+    "brenoprata10/nvim-highlight-colors",
+    opts = {},
+  },
 }
