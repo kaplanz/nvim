@@ -9,7 +9,7 @@ return {
     "kaplanz/deku.nvim",
     lazy = true,
     dependencies = { "rktjmp/lush.nvim" },
-    opts = { transparent = true },
+    opts = { transparent = false },
   },
   -- catppuccin
   {
