@@ -59,7 +59,7 @@ vim.opt.smartcase  = true
 -- }}}
 
 -- User Interface {{{
-vim.opt.cmdheight      = 0
+vim.opt.cmdheight      = 1
 vim.opt.fillchars:append {
   diff      = "╱",
   fold      = " ",
