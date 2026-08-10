@@ -60,6 +60,9 @@ vim.opt.smartcase  = true
 
 -- User Interface {{{
 vim.opt.cmdheight      = 1
+vim.opt.colorcolumn:append {
+  "+1",
+}
 vim.opt.fillchars:append {
   diff      = "╱",
   fold      = " ",

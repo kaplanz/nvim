@@ -14,6 +14,14 @@ return {
     "kevinhwang91/nvim-bqf",
     ft = "qf",
   },
+  -- Show colorcolumn dynamically
+  {
+    "Bekaboo/deadcolumn.nvim",
+    opts = {
+      modes = true,
+      scope = "visible",
+    },
+  },
   -- Improve the default vim.ui interfaces
   "stevearc/dressing.nvim",
 }
