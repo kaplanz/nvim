@@ -14,15 +14,6 @@ return {
     "kevinhwang91/nvim-bqf",
     ft = "qf",
   },
-  -- Hiding colorcolumn when unneeded
-  {
-    "m4xshen/smartcolumn.nvim",
-    opts = {
-      disabled_filetypes = {
-        "help", "lazy", "mason", "snacks_dashboard",
-      },
-    },
-  },
   -- Improve the default vim.ui interfaces
   "stevearc/dressing.nvim",
 }
