@@ -24,6 +24,9 @@ return {
       content_layout = "center",
     },
     filesystem = {
+      follow_current_file = {
+        enabled = true,
+      },
       hijack_netrw_behavior = "open_current",
     },
   },
